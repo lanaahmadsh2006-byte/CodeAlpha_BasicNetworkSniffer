@@ -1,0 +1,13 @@
+from scapy.all import sniff
+def packet callback ( packet) : 
+     print("=" * 50) 
+  if packet.haslayer("IP"): 
+     print(f"Source IP:{packet['IP'].src}")
+     print(f"Description IP:
+{packet['IP'].dst}")
+        print(f"Protocol: {packet['IP'].proto}")
+   if packet.haslayer("Raw"):
+      payload = packet["Raw"].load
+      print (f" Payload: { payload}")
+print("Starting Network Sniffer ...")
+sinff(prn=packet_callback, store=false) 
